@@ -1,9 +1,14 @@
 # MathJax-grunt-cleaner
 
-A grunt file to reduce the footprint of a MathJax installation
+A `gruntfile` to reduce the footprint of a MathJax installation. The default
+task in this branch is configured to reduce
+[MathJax `2.4.0`](https://github.com/mathjax/MathJax/releases/tag/2.4.0) to a
+packed distribution with support for only TeX input and HTML-CSS output. Further
+all fonts and formats are removed except for the
+[MathJax TeX](http://docs.mathjax.org/en/latest/font-support.html#mathjax-font-support)
+font in the `.woff` and `.otf` formats.
 
-* Fetch a copy of MathJax `wget https://github.com/mathjax/MathJax/archive/master.zip && unzip master.zip`
-* copy & rename the `template` task
-* comment out the components you want to keep (perhaps **counterintuitive**)
-
-See the comments in file for more details and caveats.
+The motivation for these choices was to provide a minimal distribution for use
+in [Atom](https://github.com/atom/atom) packages that provides the best single
+output MathJax can produce (HTML-CSS) while removing all files purely supporting
+legacy browsers.
